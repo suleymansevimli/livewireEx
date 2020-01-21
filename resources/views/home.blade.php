@@ -15,6 +15,7 @@
                     @endif
 
                     @livewire('message')
+                    @livewire('content')
                 </div>
             </div>
         </div>
