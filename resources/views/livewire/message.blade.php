@@ -6,11 +6,19 @@
             <th>email</th>
         </tr>
         @foreach($allUsers as $user)
-            <tr>
+            <tr wire:poll.750ms wire:click="delete({{$user->id}})">
                 <td>{{$user['id']}}</td>
                 <td>{{$user['name']}}</td>
                 <td>{{$user['email']}}</td>
             </tr>
         @endforeach
     </table>
+    {{$status}}
+    @push('scripts')
+        <script>
+            @if($status == 'deleteOk')
+                alert('test')
+            @endif
+        </script>
+    @endpush
 </div>

@@ -40,6 +40,10 @@ class Content extends Component
         $this->showModal = false;
     }
 
+    public function delete($id){
+
+    }
+
     public function render()
     {
         return view('livewire.content');

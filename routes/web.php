@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Str;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +20,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/test',function (){
+    $column = [
+        'name' => 'users',
+        'id' => 1
+    ];
+
+    $modelName = Str::studly(Str::singular($column['name']));
+    $name = 'App\\'.$modelName;
+
+    $model = $name::query()->find($column['id']);
+    $revision = $model->name;
+    return $revision;
+});
