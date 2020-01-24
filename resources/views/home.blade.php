@@ -16,16 +16,6 @@
 
                     @livewire('message')
                     @livewire('content')
-                    @livewire(
-                        'admin.slider','App\User',
-                        [
-                            0 => [
-                                    'name' => 'name',
-                                    'value' => 'test'
-                                ]
-                        ],
-                        'desc'
-                        )
                 </div>
             </div>
         </div>
