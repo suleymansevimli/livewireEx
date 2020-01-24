@@ -13,16 +13,16 @@ class Slider extends Component
     public $desc = 'asc';
     public $data = [];
 
-    public function mount($model,$column=[],$desc = 'asc') {
-       $componentModel =  $this->preMount($this->app,$column,$desc);
+    public function mount($model,$column,$desc='asc') {
+       $this->preMount($this->app,$column,$desc);
     }
 
-    public function preMount($model,$column=[],$desc = 'asc'){
-        $modelName = Str::studly(Str::singular($column['name']));
+    public function preMount($model,$column,$desc = 'asc'){
+        $modelName = Str::studly(Str::singular($model));
         $name = 'App\\'.$modelName;
 
-        $model = $name::query()->find($column['id']);
-        $revision = $model->name;
+        $model2 = $name::query()->find($column);
+        $revision = $model2->name;
 //        $data = $model->query();
 //        if (is_array($column)):
 //            $data->where(function($q) use ($column){

@@ -34,3 +34,5 @@ Route::get('/test',function (){
     $revision = $model->name;
     return $revision;
 });
+
+Route::livewire('/test-wire',);

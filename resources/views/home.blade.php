@@ -16,6 +16,7 @@
 
                     @livewire('message')
                     @livewire('content')
+                    @livewire('contact-form')
                 </div>
             </div>
         </div>
